@@ -25,15 +25,7 @@ Clone the repository and install the required dependencies (Python 3.9+ recommen
 ```bash
 > pip install -r requirements.txt
 ```
-2. Configuration
-Create a `.env` file in the root directory to configure your LLM provider. The project supports any OpenAI-compatible API (e.g., DeepSeek, OpenAI, vLLM).
-```
-MODEL_NAME='model_name_here'
-API_KEY='your_api_key_here'
-BASE_URL='vendor_url_here'
-MAX_WORKERS=<positive integer>
-```
-3. Running Experiments
+2. Running Experiments
 Run the main script to start the evaluation pipeline.
 ```bash
 > python run.py
