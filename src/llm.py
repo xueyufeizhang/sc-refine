@@ -53,11 +53,11 @@ class ChatLLM(BaseLLM):
                     **inputs,
                     **gen_kwargs,
                 )
-                # Debug
-                gen_len = generated_ids.shape[1] - inputs["input_ids"].shape[1]
-                print(f"[DEBUG] gen_len={gen_len}, max_new_tokens={gen_kwargs["max_new_tokens"]}")
+                # # Debug
+                # gen_len = generated_ids.shape[1] - inputs["input_ids"].shape[1]
+                # print(f"[DEBUG] gen_len={gen_len}, max_new_tokens={gen_kwargs['max_new_tokens']}")
 
-            response_ids = [output_ids[len(input_ids):] for input_ids, output_ids in zip(inputs.input_ids, generated_ids)]
+            response_ids = [output_ids[len(input_ids):] for input_ids, output_ids in zip(inputs["input_ids"], generated_ids)]
             response = self.tokenizer.batch_decode(response_ids, skip_special_tokens=True)[0]
             return response
         except Exception as e:
