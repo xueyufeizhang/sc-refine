@@ -33,7 +33,7 @@ PROMPT_NAME = [
     "evidence_anchored",
     "balanced",
 ]
-MODEL_ID = 'Qwen/Qwen2.5-7B-Instruct'
+MODEL_ID = 'model/Qwen2.5-7B-Instruct'
 MAX_WORKERS = 1
 
 
