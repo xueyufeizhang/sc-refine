@@ -12,7 +12,7 @@ class BaseLLM(ABC):
 class ChatLLM(BaseLLM):
     def __init__(self, model_id: str):
         self.model_id = model_id
-        self.model = AutoModelForCausalLM.from_pretarined(
+        self.model = AutoModelForCausalLM.from_pretrained(
             self.model_id,
             dtype=torch.bfloat16,
             device_map='auto',
@@ -38,7 +38,7 @@ class ChatLLM(BaseLLM):
 
 
             gen_kwargs = {
-                "max_new_tokens": 256,
+                "max_new_tokens": 448,
             }
 
             if temperature is not None and temperature > 0:
